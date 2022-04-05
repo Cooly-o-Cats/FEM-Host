@@ -1,0 +1,137 @@
+@use 'breakpoints' as *;
+
+// Variables
+
+$Neon-Green: #52FFA8;
+$Light-Cyan: #CEE3E9;
+
+$Grayish-Blue: #4E5D73;
+$Dark-Grayish-Blue: #323A49;
+$Dark-Blue: #1F2632;
+
+// Global Styles
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Manrope';
+    background-color: $Dark-Blue;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+// Other Styles
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.card {
+    background-color: $Dark-Grayish-Blue;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    border-radius: .875rem;
+    min-width: 20.625rem;
+
+    @include breakpoint(medium) {
+        min-width: 29.6875rem;
+        box-shadow: 1px 3px 36px rgba(0, 0, 0, 0.2);
+    }
+}
+
+.card__text {
+    margin-top: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 1.25rem;
+
+    @include breakpoint(medium) {
+        margin-top: 3.125rem;
+        margin-bottom: 2.5rem;
+    }
+}
+
+.card__text > p {
+    font-size: .6875rem;
+    letter-spacing: 0.305em;
+    text-align: center;
+    color: $Neon-Green;
+    text-transform: uppercase;
+    margin-bottom: .9375rem;
+}
+
+.card__text > h1 {
+    width: 80%;
+    font-size: 1.4375rem;
+    line-height: 2.0625rem;
+    letter-spacing: 0.01em;
+    text-align: center;
+    color: $Light-Cyan;
+    margin-top: .9375rem;
+}
+
+.card__dividers {
+    margin-bottom: 3.75rem;
+}
+
+.card__dividers > .viewport--mobile {
+    display: none;
+    @include breakpoint-down(small) {
+        display: block;
+    }
+}
+
+.card__dividers > .viewport--desktop {
+    display: none;
+    @include breakpoint(medium) {
+        display: block;
+    }
+}
+
+.container__button {
+    background-color: $Neon-Green;
+    border: none;
+    padding: 1.3125rem;
+    border-radius: 100%;
+    margin-top: -2.625rem;
+    transition: background .1s ease-in, box-shadow .3s ease-out;
+}
+
+.container__button:hover {
+    @include breakpoint(medium) {
+        box-shadow: 0px 0px 25px 15px rgba(82, 255, 168, 0.29);
+        transition: box-shadow .3s ease-in;
+    }
+}
+
+.container__button:active {
+    background-color: darken($Neon-Green, 20%);
+    transition: background .1s ease-in;
+}
+
+.fadeInDown {
+    animation: fadeInDown .4s;
+}
+
+@keyframes fadeInDown{
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 100;
+    }
+}
+

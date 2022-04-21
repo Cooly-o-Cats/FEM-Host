@@ -1,0 +1,235 @@
+@use 'globals' as *;
+@use 'utils' as u;
+
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html,
+body {
+    min-height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: $pale-blue;
+    font-family: $main-font;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+
+    .desktop {
+        display: none;
+        @include u.breakpoint(large) {
+            display: block;
+        }
+    }
+
+    .mobile {
+        @include u.breakpoint(large) {
+            display: none;
+        }
+    }
+
+    header {
+        .bg-img.mobile {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            @include u.breakpoint-customUp(376px) {
+                transform: scale(5.2);
+            }
+        }
+
+        .bg-img.desktop {
+            position: absolute;
+            left: 0;
+            top: 0;
+            z-index: -1;
+            @include u.breakpoint(xlarge) {
+                transform: scale(2);
+            }
+        }
+    }
+    .container {
+        max-width: 415px;
+        width: 90vw;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        .card {
+            max-width: 100%;
+            background-color: white;
+            overflow: hidden;
+            border-radius: 27px;
+            width: 90vw;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 10px 5px 37px rgba(114, 128, 167, 0.75);
+
+            .hero-img,
+            .hero-img img {
+                max-width: 90vw;
+                @include u.breakpoint-customUp(500px) {
+                    transform: scale(1.05);
+                }
+            }
+
+            .main-text {
+                margin-top: 2.5rem;
+                margin-bottom: 1.875rem;
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+
+                h1 {
+                    font-weight: 700;
+                    font-size: 1.5625rem;
+                    color: $dark-blue;
+                    text-align: center;
+                    margin-bottom: 0.8125rem;
+                    @include u.breakpoint(large) {
+                        font-size: 1.8125rem;
+                    }
+                }
+                p {
+                    font-weight: 500;
+                    font-size: 1.0625rem;
+                    line-height: 1.549375rem;
+                    color: $desaturated-blue;
+                    text-align: center;
+                    max-width: 80%;
+                }
+            }
+
+            .plan-card {
+                background-color: $very-pale-blue;
+                display: flex;
+                max-width: 85%;
+                align-items: center;
+                justify-content: space-between;
+                width: 315px;
+                padding: 15px 15px 15px 15px;
+                border-radius: 11px;
+                @include u.breakpoint-down(xsmall) {
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 2rem 20% 2rem 20%;
+                }
+
+                img {
+                    width: 3rem;
+                    height: 3rem;
+                }
+
+                .plan-text {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+
+                    h2 {
+                        font-weight: 900;
+                        font-size: 1rem;
+                        text-align: center;
+                        color: $dark-blue;
+                    }
+
+                    h3 {
+                        font-weight: 500;
+                        font-size: 1rem;
+                        text-align: center;
+                        color: $desaturated-blue;
+                    }
+                }
+
+                a {
+                    font-weight: 700;
+                    font-size: 0.90625rem;
+                    text-align: center;
+                    color: $bright-blue;
+                    transition: color 0.25s ease-in-out;
+                }
+                a:hover {
+                    color: #766cf1;
+                    transition: color 0.25s ease-in-out;
+                }
+            }
+
+            .btns {
+                display: flex;
+                flex-direction: column;
+                margin-top: 30px;
+                align-items: center;
+                @include u.breakpoint-customDown(350px){
+                    width: 80%;
+                }
+
+                .payment {
+                    font-weight: 900;
+                    font-size: 0.9375rem;
+                    text-align: center;
+                    color: white;
+
+                    background-color: $bright-blue;
+                    padding: 0.9375rem 5rem 0.9375rem 5rem;
+                    border: none;
+                    border-radius: 0.9375rem;
+                    margin-bottom: 0.5rem;
+                    filter: drop-shadow(1px 13px 15px rgba(56, 41, 224, 0.26));
+                    transition-duration: 0.25s;
+                    transition-timing-function: ease-in-out;
+                    transition-property: background-color, shadow;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .payment:hover {
+                    background-color: #766cf1;
+                    filter: drop-shadow(1px 13px 15px rgba(118, 108, 241, 0.26));
+                    transition-duration: 0.25s;
+                    transition-timing-function: ease-in-out;
+                    transition-property: background-color, shadow;
+                }
+                .cancel {
+                    font-weight: 900;
+                    font-size: 0.9375rem;
+                    text-align: center;
+                    color: $desaturated-blue;
+
+                    background-color: white;
+                    padding: 0.9375rem 5rem 0.9375rem 5rem;
+                    border: none;
+                    border-radius: 0.9375rem;
+                    margin-bottom: 0.5rem;
+                    transition: color 0.25s ease-in-out;
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                }
+                .cancel:hover {
+                    color: black;
+                    transition: color 0.25s ease-in-out;
+                }
+
+                .payment,
+                .cancel {
+                    cursor: pointer;
+                    @include u.breakpoint-down(xsmall) {
+                        width: 80%;
+                    }
+                }
+            }
+        }
+    }
+}

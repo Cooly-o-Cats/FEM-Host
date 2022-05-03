@@ -1,0 +1,130 @@
+.colorTab {
+    width: 255px;
+    height: 66px;
+    position: relative;
+    margin-bottom: -1.25rem;
+    border-top-left-radius: 1.125rem;
+    border-top-right-radius: 1.125rem;
+}
+
+.colorTab img {
+    position: absolute;
+    top: 0;
+    right: 8%;
+}
+
+.infoTab { 
+    background-color: #1C1F4A;
+    width: 255px;
+    height: 200px;
+    border-radius: 1.125rem;
+    position: relative;
+    transition: background .3s ease-in-out;
+}
+
+.infoTab:hover {
+    background-color: #34397B;
+    transition: background .25s ease-in;
+}
+
+.infoTab__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 2.0625rem;
+    margin-bottom: 1.675rem;
+}
+
+.infoTab__title {
+    font-weight: 500;
+    font-size: 1.125rem;
+    color: hsla(0, 0%, 100%, 1);
+    margin-left: 1.75rem;
+}
+
+.infoTab__menu {
+    width: 21px;
+    height: 5px;
+    margin-right: 2.6875rem;
+}
+
+.infoTab__menu:hover .infoTab__menu--path {
+    fill: white;
+    transition: fill .3s ease-in;
+}
+
+.timeTab__current {
+    font-weight: 300;
+    font-size: 3.375rem;
+    color: hsla(0, 0%, 100%, 1);
+    margin-left: 1.75rem;
+    margin-bottom: .8125rem;
+}
+
+.timeTab__past {
+    font-weight: 300;
+    font-size: 1rem;
+    letter-spacing: -0.02em;
+    color: hsla(236, 100%, 87%, 1);
+    margin-left: 1.85rem;
+}
+
+@media (max-width: 1150px) {
+    .colorTab {
+        width: 322px;
+        height: 56px;
+    }
+
+    .colorTab img {
+        width: 58px;
+        height: auto;
+    }
+    
+    .infoTab { 
+        width: 322px;
+        height: 115px;
+    }
+    
+    .infoTab__header {
+        padding-top: 1.6875rem;
+        margin-bottom: .875rem;
+    }
+    
+    .infoTab__menu {
+        width: 21px;
+        height: 5px;
+        margin-right: 1.3125rem;
+    }
+
+    .timeTab {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+    
+    .timeTab__current {
+        font-size: 1.9375rem;
+    }
+    
+    .timeTab__past {
+        margin-left: 0;
+        margin-right: 1.3125rem;
+        margin-bottom: .35rem;
+    }
+}
+
+.animation-FadeIn {
+    animation: fadeIn 1s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from{
+        opacity: 0%;
+        transform: translateY(-10px);
+    }
+
+    to{
+        opacity: 100%;
+        transform: translateY(0px);
+    }
+}

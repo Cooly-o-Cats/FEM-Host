@@ -1,0 +1,121 @@
+
+.titleCard {
+    background-color: #5847EB;
+    width: 255px;
+    height: 353px;
+    border-radius: 1.125rem;
+    z-index: 2;
+    position: relative;
+}
+
+.titleCard__avatar {
+    width: 79px;
+    height: 79px;
+    border-radius: 100%;
+    border: 3px solid #FFFFFF;
+    margin: 2.125rem 0 3.0625rem 1.6875rem;
+}
+
+.titleCard__desc {
+    font-weight: 300;
+    font-size: 1rem;
+    margin-left: 1.6875rem;
+    margin-bottom: 1.0625rem;
+    color: hsla(236, 100%, 87%, 1);
+}
+
+.titleCard__title {
+    font-weight: 300;
+    font-size: 2.5rem;
+    line-height: 2.9625rem;
+    color: hsla(0, 0%, 100%, 1);
+    margin-left: 1.6875rem;
+}
+
+.nav {
+    height: 170px;
+    width: 255px;
+    background-color: #1C1F4A;
+    margin-top: -0.625rem;
+    z-index: 1;
+    position: relative;
+    border-bottom-right-radius: 1.125rem;
+    border-bottom-left-radius: 1.125rem;
+}
+
+.nav__list {
+    list-style: none;
+    margin-left: 1.6875rem;
+    padding-top: 2.1875rem;
+    padding-bottom: 1.6875rem;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.nav__link {
+    font-weight: 300;
+    font-size: 1.125rem;
+    color: hsla(235, 45%, 61%, 1);
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+}
+
+.nav__link:hover {
+    color: hsla(0, 0%, 100%, 1);
+}
+
+.nav__link--active {
+    color: hsla(0, 0%, 100%, 1);
+    font-size: 1.325rem;
+    cursor: pointer;
+    transition: all .2s ease-in-out;
+}
+
+@media (max-width: 1150px) {
+    .titleCard {
+        width: 322px;
+        height: 130px;
+        display: flex;
+    }
+
+    .titleCard__avatar {
+        margin: 1.5625rem 0 0 1.6875rem;
+    }
+
+    .titleCard__desc {
+        margin-left: 1rem;
+        margin-top: 3.125rem;
+        margin-bottom: .5625rem;
+    }
+
+    .titleCard__title {
+        font-size: 1.625rem;
+        line-height: 1.875rem;
+        margin-left: 1rem;
+    }
+
+    .nav {
+        height: 80px;
+        width: 322px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .nav__list {
+        list-style: none;
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-around;
+        padding: 0;
+        height: fit-content;
+        margin-left: 0;
+        width: 100%;
+    }
+
+    .nav__link--active {
+        font-size: 1.125rem;
+    }
+}

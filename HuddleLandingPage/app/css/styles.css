@@ -1,0 +1,215 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  width: 100vw;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: #674BAF;
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  overflow-x: hidden;
+}
+body img.background {
+  max-width: 100vw;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: auto;
+  z-index: -1;
+}
+@media (min-width: 71.875em) {
+  body img.background {
+    height: 100vh;
+    width: 100vw;
+    object-fit: cover;
+  }
+}
+body img.logo {
+  width: 123px;
+  align-self: flex-start;
+  margin: 2.25rem 0 4.25rem 2.875rem;
+}
+@media (min-width: 71.875em) {
+  body img.logo {
+    width: 200px;
+    margin-bottom: 7.1875rem;
+  }
+}
+body img.ui {
+  z-index: 2;
+  width: 78vw;
+  margin-bottom: 4.0625rem;
+}
+@media (min-width: 40em) {
+  body img.ui {
+    width: 600px;
+  }
+}
+@media (min-width: 71.875em) {
+  body img.ui {
+    margin-left: 4rem;
+  }
+}
+body main {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  width: 100%;
+  margin-bottom: 65px;
+}
+@media (min-width: 71.875em) {
+  body main {
+    flex-direction: row;
+  }
+}
+body main .content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+@media (min-width: 71.875em) {
+  body main .content {
+    align-items: flex-start;
+    margin-left: 4.0625rem;
+    width: 32.8125rem;
+  }
+}
+body main h1.title {
+  font-weight: 600;
+  font-size: 1.5rem;
+  line-height: 2.25rem;
+  letter-spacing: 0.5%;
+  text-align: center;
+  color: white;
+  width: 16.625rem;
+  margin-bottom: 1.25rem;
+}
+@media (min-width: 40em) {
+  body main h1.title {
+    width: 75%;
+  }
+}
+@media (min-width: 71.875em) {
+  body main h1.title {
+    font-size: 2.5rem;
+    text-align: left;
+    line-height: 58px;
+  }
+}
+body main p {
+  font-weight: 400;
+  font-size: 0.9375rem;
+  line-height: 1.4575rem;
+  letter-spacing: -1.5%;
+  text-align: center;
+  color: rgba(255, 255, 255, 0.94);
+  width: 300px;
+  margin-bottom: 25px;
+}
+@media (min-width: 40em) {
+  body main p {
+    width: 75%;
+    max-width: 650px;
+  }
+}
+@media (min-width: 71.875em) {
+  body main p {
+    font-size: 1.0625rem;
+    text-align: left;
+    line-height: 1.5938rem;
+    opacity: 79%;
+    width: 32.5rem;
+  }
+}
+body main button {
+  width: 209px;
+  height: 57px;
+  border-radius: 2.125rem;
+  border: none;
+  box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.32);
+  font-weight: 400;
+  font-size: 1.0625rem;
+  letter-spacing: 3.5%;
+  color: #674BAF;
+  cursor: pointer;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+}
+@media (min-width: 71.875em) {
+  body main button:hover {
+    background-color: #E882E8;
+    color: white;
+    transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  }
+}
+body footer.socials {
+  display: flex;
+  margin-bottom: 2.5rem;
+}
+@media (min-width: 71.875em) {
+  body footer.socials {
+    margin-bottom: 0;
+    position: fixed;
+    right: 5rem;
+    bottom: 2.5rem;
+  }
+  body footer.socials .social:hover {
+    border: 1px solid #E882E8;
+    transition: border 0.3s ease-in;
+  }
+  body footer.socials .social:hover img {
+    display: none;
+  }
+  body footer.socials .social:hover img.hover {
+    display: block;
+  }
+}
+body footer.socials .social {
+  width: 30px;
+  height: 30px;
+  border: 1px solid white;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 0.5625rem;
+  transition: border 0.3s ease-in;
+}
+body footer.socials .social img {
+  width: 15px;
+  height: 15px;
+}
+body footer.socials .social img.hover {
+  display: none;
+}
+
+.desktop {
+  display: none;
+}
+@media (min-width: 71.875em) {
+  .desktop {
+    display: block;
+  }
+}
+
+.mobile {
+  display: block;
+}
+@media (min-width: 71.875em) {
+  .mobile {
+    display: none;
+  }
+}
+
+/*# sourceMappingURL=styles.css.map */

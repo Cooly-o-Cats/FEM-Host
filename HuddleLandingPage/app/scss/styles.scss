@@ -1,0 +1,226 @@
+@use 'breakpoints' as *;
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+
+$Violet: #674BAF;
+$Soft-Magenta: #E882E8;
+
+*,
+*::before,
+*::after{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: $Violet;
+    position: relative;
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+
+    img.background{
+        max-width: 100vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: auto;
+        z-index: -1;
+
+        @include breakpoint(large) {
+            height: 100vh;
+            width: 100vw;
+            object-fit: cover;
+        }
+
+    }
+    
+    img.logo{
+        width: 123px;
+        align-self: flex-start;
+        margin: 2.25rem 0 4.25rem 2.875rem;
+
+        @include breakpoint(large) {
+            width: 200px;
+            margin-bottom: 7.1875rem;
+        }
+    }
+
+    img.ui{
+        z-index: 2;
+        width: 78vw;
+        margin-bottom: 4.0625rem;
+
+        @include breakpoint(medium) {
+            width: 600px;
+        }
+
+        @include breakpoint(large) {
+            margin-left: 4rem;
+        }
+    }
+
+    main{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        width: 100%;
+
+        @include breakpoint(large) {
+            flex-direction: row;
+        }
+
+        .content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+
+            @include breakpoint(large) {
+                align-items: flex-start;
+                margin-left: 4.0625rem;
+                width: 32.8125rem;
+            }
+        }
+
+        h1.title{
+            font-weight: 600;
+            font-size: 1.5rem;
+            line-height: 2.25rem;
+            letter-spacing: 0.5%;
+            text-align: center;
+            color: white;
+            width: 16.625rem;
+            margin-bottom: 1.25rem;
+
+            @include breakpoint(medium) {
+                width: 75%;
+            }
+
+            @include breakpoint(large) {
+                font-size: 2.5rem;
+                text-align: left;
+                line-height: 58px;
+            }
+        }
+
+        p{
+            font-weight: 400;
+            font-size: .9375rem;
+            line-height: 1.4575rem;
+            letter-spacing: -1.5%;
+            text-align: center;
+            color: hsla(0, 0%, 100%, 0.94);
+            width: 300px;
+            margin-bottom: 25px;
+
+            @include breakpoint(medium) {
+                width: 75%;
+                max-width: 650px;
+            }
+
+            @include breakpoint(large) {
+                font-size: 1.0625rem;
+                text-align: left;
+                line-height: 1.5938rem;
+                opacity: 79%;
+                width: 32.5rem;
+            }
+        }
+
+        button{
+            width: 209px;
+            height: 57px;
+            border-radius: 2.125rem;
+            border: none;
+            box-shadow: 0px 3px 8px 1px rgba(0, 0, 0, 0.32);
+
+            font-weight: 400;
+            font-size: 1.0625rem;
+            letter-spacing: 3.5%;
+            color: $Violet;
+            cursor: pointer;
+            transition: background-color .2s ease-in-out, color .2s ease-in-out;
+        }
+
+        @include breakpoint(large) {
+            button:hover {
+                background-color: $Soft-Magenta;
+                color: white;
+                transition: background-color .2s ease-in-out, color .2s ease-in-out;
+            }
+        }
+
+        margin-bottom: 65px;
+    }
+
+    footer.socials {
+        display: flex;
+        margin-bottom: 2.5rem;
+
+        @include breakpoint(large) {
+            margin-bottom: 0;
+            position: fixed;
+            right: 5rem;
+            bottom: 2.5rem;
+
+            .social:hover {
+                border: 1px solid $Soft-Magenta;
+                transition: border .3s ease-in;
+
+                img {
+                    display: none;
+                }
+
+                img.hover {
+                    display: block;
+                }
+            }
+        }
+
+        .social {
+            width: 30px;
+            height: 30px;
+            border: 1px solid white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin: 0 .5625rem;
+            transition: border .3s ease-in;
+
+            img {
+                width: 15px;
+                height: 15px;
+            }
+
+            img.hover {
+                display: none;
+            }
+        }
+    }
+}
+
+.desktop{
+    display: none;
+
+    @include breakpoint(large) {
+        display: block;
+    }
+}
+
+.mobile {
+    display: block;
+
+    @include breakpoint(large) {
+        display: none;
+    }
+}
